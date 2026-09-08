@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logistics and Procurement Coordinator — Chifles</title>
+<style>
+:root{
+  --chifles-original-green:#006937;
+  --chifles-coconut-cream:#f0ebd6;
+  --chifles-plantain-gold:#f5a800;
+  --chifles-classic-red:#c10230;
+  --chifles-mangrove:#042e20;
+  --chifles-cuba-blue:#00609f;
+  --bg-page:var(--chifles-coconut-cream);
+  --bg-dark:var(--chifles-mangrove);
+  --ink-primary:var(--chifles-original-green);
+  --ink-on-dark:var(--chifles-coconut-cream);
+  --accent-frame:var(--chifles-plantain-gold);
+  --status-good:var(--chifles-original-green);
+  --status-watch:var(--chifles-plantain-gold);
+  --status-info:var(--chifles-cuba-blue);
+  --font-display:"Bodoni MT",Didot,"Playfair Display",Georgia,serif;
+  --font-label:"Bodoni MT Condensed","Oswald","Arial Narrow",sans-serif;
+  --font-body:"Gill Sans","Gill Sans MT","Segoe UI",Candara,Calibri,sans-serif;
+  --space-1:8px; --space-2:16px; --space-3:28px; --space-4:48px;
+  --radius-panel:14px;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--bg-page);
+  color:var(--chifles-mangrove);
+  font-family:var(--font-body);
+  line-height:1.55;
+  margin:0;
+  padding:var(--space-3) var(--space-2) var(--space-4);
+}
+.wrap{max-width:840px;margin:0 auto}
+
+header.masthead{
+  background-color:var(--bg-dark);
+  background-image:
+    linear-gradient(105deg, rgba(4,46,32,.97) 0%, rgba(4,46,32,.97) 46%, rgba(4,46,32,.80) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72'%3E%3Ccircle cx='36' cy='36' r='24' fill='none' stroke='%23006937' stroke-width='2.5'/%3E%3Ccircle cx='36' cy='36' r='19' fill='none' stroke='%23006937' stroke-width='1.2'/%3E%3C/svg%3E");
+  color:var(--ink-on-dark);
+  border-radius:var(--radius-panel);
+  border-bottom:5px solid var(--accent-frame);
+  padding:var(--space-3);
+  margin-bottom:var(--space-3);
+}
+.eyebrow{
+  font-family:var(--font-label);
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  font-size:.72rem;
+  color:var(--accent-frame);
+  margin:0 0 var(--space-1);
+}
+h1{
+  font-family:var(--font-display);
+  font-weight:800;
+  letter-spacing:.5px;
+  line-height:1.06;
+  font-size:2.5rem;
+  color:var(--ink-on-dark);
+  margin:0 0 var(--space-2);
+}
+.standfirst{margin:0;max-width:60ch;opacity:.92}
+
+.meta{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:var(--space-2);
+  margin-top:var(--space-3);
+  padding-top:var(--space-2);
+  border-top:1px solid rgba(240,235,214,.28);
+}
+.meta dt{
+  font-family:var(--font-label);
+  font-size:.7rem;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--accent-frame);
+  margin:0 0 2px;
+}
+.meta dd{margin:0;font-size:.97rem}
+
+h2{
+  font-family:var(--font-label);
+  font-weight:700;
+  font-size:1.32rem;
+  color:var(--ink-primary);
+  margin:var(--space-4) 0 var(--space-1);
+  padding-bottom:6px;
+  border-bottom:2px solid var(--accent-frame);
+}
+h3{
+  font-family:var(--font-label);
+  font-size:1.02rem;
+  color:var(--chifles-mangrove);
+  margin:var(--space-3) 0 var(--space-1);
+}
+p{margin:0 0 var(--space-2);max-width:72ch}
+
+.panel{
+  background:#fff8e8;
+  border-radius:var(--radius-panel);
+  padding:var(--space-2) var(--space-3);
+  margin:var(--space-2) 0;
+}
+.panel-good{border-left:6px solid var(--status-good)}
+.panel-watch{border-left:6px solid var(--status-watch)}
+.panel-info{border-left:6px solid var(--status-info)}
+.panel p:last-child{margin-bottom:0}
+
+ul{margin:0 0 var(--space-2);padding-left:1.15rem;max-width:72ch}
+li{margin-bottom:var(--space-1)}
+li b{color:var(--ink-primary)}
+
+.apply-emails{list-style:none;padding:0;margin:0}
+.apply-emails li{
+  margin-bottom:6px;font-family:var(--font-label);letter-spacing:.3px;
+}
+.apply-emails a{color:var(--ink-primary)!important;font-weight:700;text-decoration:none}
+
+.deadline-banner{
+  background:var(--chifles-classic-red);color:#fff;text-align:center;
+  border-radius:var(--radius-panel);padding:18px 20px;margin:0 0 var(--space-3);
+  font-family:var(--font-label);text-transform:uppercase;letter-spacing:.06em;
+  box-shadow:0 10px 24px rgba(193,2,48,.25);
+}
+.deadline-banner .big{display:block;font-size:clamp(1.3rem,3.2vw,1.9rem);font-weight:900;line-height:1.2}
+.deadline-banner .small{display:block;font-size:.82rem;font-weight:700;letter-spacing:.12em;margin-top:4px;opacity:.92}
+
+.note{
+  font-size:.9rem;
+  color:#4a5a50;
+  font-style:italic;
+  max-width:72ch;
+}
+footer{
+  margin-top:var(--space-4);
+  padding-top:var(--space-2);
+  border-top:2px solid var(--accent-frame);
+  font-size:.86rem;
+  color:#4a5a50;
+}
+@media print{
+  body{padding:0}
+  header.masthead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Chifles &middot; Plantain Products Company</p>
+  <h1>Logistics and Procurement Coordinator</h1>
+  <p class="standfirst">A dedicated report to the Director of Supply Chain and Operations, keeping product moving and orders flowing every day.</p>
+  <dl class="meta">
+    <div><dt>Reports to</dt><dd>Rafael Urgelles, Director of Supply Chain and Operations</dd></div>
+    <div><dt>Location</dt><dd>On site, Miami, relocating to Hialeah</dd></div>
+    <div><dt>Language</dt><dd>English and Spanish, both working</dd></div>
+  </dl>
+</header>
+
+<div class="deadline-banner">
+  <span class="big">Applications open Tuesday, Sept 8 — close Friday, Sept 13</span>
+  <span class="small">Resumes received after Friday, Sept 13 will not be considered</span>
+</div>
+
+<h2>What the role is</h2>
+
+<p>Chifles is the number one plantain chip brand in the United States by dollar sales, family owned, roughly 65 employees. Miami is a bagging and display-building operation: cooked chips arrive in bulk from our suppliers, and the plant bags them and builds the displays that ship to clubs and retailers. Product moves through national retailers, warehouse clubs, a Florida DSD route network and independent distributors.</p>
+
+<p>Day-to-day logistics is currently one half of a job whose other half is food-safety compliance, and both halves deserve a whole person. This seat takes the logistics half as a whole job, and adds purchase order execution for the inputs that are not fruit, including the racks and displays that today are ordered from several desks and will be ordered from this one.</p>
+
+<p>The shape of the job is execution done well and done reliably. You keep product moving, you keep order flow clean, and you work to the freight and spend limits the Director sets. The measurement and governance work sits with him; this seat is where someone grows toward it.</p>
+
+<h2>What you will do</h2>
+
+<h3>Freight and daily logistics</h3>
+<ul>
+  <li><b>Freight quoting and carrier booking, the largest single piece of the job.</b> Solicit and compare FTL and LTL rates daily across our broker and carrier bench, hold a lane to a ceiling, and book.</li>
+  <li><b>Live shipment coordination and exceptions.</b> Bills of lading and corrections, pickup confirmations and reschedules, trailer status, refused shipments, damage and shortage claims.</li>
+  <li><b>Retailer purchase order cross-check</b>, near daily across our club and retail accounts: read each incoming PO against what was quoted and what will ship, and catch the leakage before it becomes a deduction. Order entry itself sits with the customer service team.</li>
+  <li><b>The weekly DSD delivery schedule</b>, published to our independent distributor network and to the internal sales and operations team.</li>
+  <li><b>Purchase order reconciliation with brokers</b>, mapping retailer PO lines and ship dates to SKUs.</li>
+  <li><b>Packaging and inbound supplier documentation</b>, including case and state-specific label specifications and inbound container paperwork.</li>
+</ul>
+
+<h3>Purchase orders and follow-through</h3>
+<ul>
+  <li><b>Place and manage purchase orders</b> for film, packaging and other non-fruit inputs, tracking lead times and reorder points against the production plan. Execution against a plan the Director owns, not supplier selection or negotiation.</li>
+  <li><b>Own the rack and display purchasing end to end.</b> Every rack and display order for clubs and retail consolidates into this seat: quantities against the program, lead times, delivery to the plant, and the paperwork behind each one.</li>
+  <li><b>Keep the carrier and supplier scorecard current</b> once the Director defines it: on-time-in-full, fill rate, cost variance against quote.</li>
+  <li><b>Check carrier invoices against the rate that was quoted</b>, and flag every variance, so rate creep is caught by a standing check rather than a spot audit.</li>
+  <li><b>Work inside the freight and spend limits the Director sets</b>, and escalate above them.</li>
+  <li><b>Oversee the weekly inventory reconciliation</b> in Acumatica. The counts stay with the people who own each category; this seat checks that they happened, chases the ones that did not, and escalates the variances.</li>
+  <li><b>Absorb the day-to-day operational exceptions</b> that currently arrive at nights and on weekends.</li>
+  <li><b>Through the facility relocation, hold day-to-day operations steady</b> so the Director's attention can go to the move.</li>
+</ul>
+
+<h3>Fleet</h3>
+<ul>
+  <li><b>DOT compliance</b> for our trucks and drivers: files, inspections, renewals and the calendar behind them. Low frequency, zero tolerance for a lapse.</li>
+  <li><b>Truck and trailer maintenance scheduling</b> across the owned units and the Ryder-leased ones, so service happens on time and a unit out of service never surprises the delivery schedule.</li>
+</ul>
+
+<div class="panel panel-good">
+  <p><b>Not in this seat, and that is deliberate.</b> Designing the supplier and carrier measurement layer, holding a delegated spend authority, and redesigning inventory toward scan-based receiving all stay with the Director. They are the natural growth path for whoever takes this job, and they belong in a development plan rather than in a first year.</p>
+</div>
+
+<h2>What we are looking for</h2>
+<ul>
+  <li>Two to four years in logistics, freight, shipping or purchasing, in food, CPG, distribution or manufacturing.</li>
+  <li>Comfortable working inside an ERP rather than around it in spreadsheets. Acumatica experience is a plus, not a requirement.</li>
+  <li>Solid Excel, and the care to keep a running scorecard accurate.</li>
+  <li><b>Demonstrated AI proficiency.</b> A requirement, not a preference. We build with AI tools daily across the company and you will be expected to do the same. Come ready to show us what you have built or automated.</li>
+  <li>English and Spanish, both working. Much of the plant floor and warehouse operate in Spanish.</li>
+  <li>Organized under load, and willing to chase a carrier until you get an answer.</li>
+</ul>
+
+<h2>First 90 days</h2>
+<ul>
+  <li>Take handover of daily logistics and purchasing over a 90-day overlap rather than a cutover, working beside the people who run it today.</li>
+  <li>Run the freight quoting cycle and the weekly delivery schedule without supervision.</li>
+  <li>Keep the carrier and supplier scorecard current once the Director defines it.</li>
+  <li>Be reliable enough on day-to-day that the Director's involvement drops to exceptions.</li>
+</ul>
+
+<h2>How we evaluate</h2>
+<p>A conversation, then a practical exercise on real lane and supplier data: read a set of carrier quotes and pick one, then read an invoice against the quote and say what is wrong with it. The details of how this exercise runs will be shared in a second phase, once your resume is in and reviewed.</p>
+
+<h2>How to apply</h2>
+<div class="panel panel-info">
+  <p><b>Send your resume to all three, between Tuesday, Sept 8 and Friday, Sept 13:</b></p>
+  <ul class="apply-emails">
+    <li><a href="mailto:mguillen@chifleschips.com">mguillen@chifleschips.com</a></li>
+    <li><a href="mailto:tonyrivas@chifleschips.com">tonyrivas@chifleschips.com</a></li>
+    <li><a href="mailto:rurgelles@chifleschips.com">rurgelles@chifleschips.com</a></li>
+  </ul>
+</div>
+
+<footer>
+  Plantain Products Company, Miami, Florida. Posted September 2026.
+</footer>
+
+</div>
+</body>
+</html>
